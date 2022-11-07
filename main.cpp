@@ -1,9 +1,10 @@
+// --**GBK
 #include<iostream>
 #include<cstring>
+
 using namespace std;
 
-class Person
-{
+class Person {
 public:
     Person(char nameV[], bool sexV, int ageV, float highV, float weigtV) {
         setName(nameV);
@@ -12,27 +13,39 @@ public:
         setHigh(highV);
         setWeigt(weigtV);
     };
+
     ~Person() {};
+
     void eat(char obj[]) {};
+
     void sleep() {};
-    int print()
-    {
+
+    int print() {
         cout << "name:" << name << endl
-             << "age:" <<getAge() << endl
-             << "sex:" <<age << endl
+             << "age:" << getAge() << endl
+             << "sex:" << resex() <<endl
              << "high:" << high << endl
              << "weight:" << weigt;
         return 0;
     };
-    int getAge()
-    {
+
+    int getAge() {
         return age;
     };
-    void setName(char nameV[]) { strcpy_s(name,sizeof(nameV), nameV); };
+
+    void setName(char nameV[]) { strcpy_s(name, sizeof(nameV), nameV); };
+
     void setSex(bool sexV) { sex = sexV; };
-    void setAge(int newAge)	{age = newAge;};
+
+    string resex() {
+        return this->sex ? "man" : "woman";
+    }
+
+    void setAge(int newAge) { age = newAge; };
+
     void setHigh(float highV) { high = highV; };
-    void setWeigt(float weigtV){weigt = weigtV; };
+
+    void setWeigt(float weigtV) { weigt = weigtV; };
 private:
     char name[10];
     bool sex;
@@ -41,9 +54,8 @@ private:
     float weigt;
 };
 
-int main()
-{
-    char name[10]="张三";
+int main() {
+    char name[10] = "张三";
     Person A(name, 1, 20, 180.0, 130.0);
     A.print();
 }
