@@ -1,4 +1,4 @@
-// --**GBK
+// --**GBK---
 #include<iostream>
 #include<cstring>
 
@@ -55,7 +55,7 @@ private:
 };
 
 int main() {
-    char name[10] = "ÕÅÈý";
+    char name[10] = "å¼ ä¸‰";
     Person A(name, 1, 20, 180.0, 130.0);
     A.print();
 }
